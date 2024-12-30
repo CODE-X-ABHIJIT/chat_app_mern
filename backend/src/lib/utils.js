@@ -4,10 +4,7 @@ export const generateToken = (userId, res) => {
   const token = jwt.sign({ userId }, process.env.JWT_SECRET, {
     expiresIn: "7d",
   });
-console.log("user id", userId);
- console.log("JWT_SECRET:", process.env.JWT_SECRET);
-   console.log("token: ", token);
-  res.cookie("jwt", token, {
+  res.cookie("tok", token, {
     maxAge: 7 * 24 * 60 * 60 * 1000, // MS
     httpOnly: true, // prevent XSS attacks cross-site scripting attacks
     sameSite: "strict", // CSRF attacks cross-site request forgery attacks
