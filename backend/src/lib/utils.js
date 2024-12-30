@@ -6,6 +6,7 @@ export const generateToken = (userId, res) => {
   });
 console.log("user id", userId);
  console.log("JWT_SECRET:", process.env.JWT_SECRET);
+   console.log("token: ", token);
   res.cookie("jwt", token, {
     maxAge: 7 * 24 * 60 * 60 * 1000, // MS
     httpOnly: true, // prevent XSS attacks cross-site scripting attacks
