@@ -11,7 +11,6 @@ import authRoutes from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.route.js";
 import { app, server } from "./lib/socket.js";
 app.use(cookieParser());
-console.log("Required token", req.cookies);
 dotenv.config();
 
 const PORT = process.env.PORT||5001;
